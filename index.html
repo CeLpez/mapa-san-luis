@@ -7,31 +7,31 @@
 /* Atlas layout: header, then the map (wide) beside a panel; the panel stacks under the map on phones. */
 :root {
   --page: #EFEBE1; --panel: #FFFDF8; --ink: #1F2A33; --muted: #5F6870; --line: #D8D0BF;
-  --sea: #CBDCE0; --land: #F5F1E7; --land-ext: #E7E1D3; --sl: #F6E6D1; --border: #A99F8C;
+  --sea: #CBDCE0; --land: #F5F1E7; --land-ext: #E7E1D3; --sl: #E2EAF5; --accent: #2A4D9B; --border: #A99F8C;
   --road: #8E959A; --rn7: #2C3A45; --rail: #2C3A45; --rail-gap: #F5F1E7; --rail-minor: #A49E92;
   --water: #A9CBDB; --water-line: #5B95B4; --water-ink: #2F6E8F; --relief-ink: #7A5B3A;
   --e1: #B98310; --e2: #2D6E8E; --e3: #B4532A; --e4: #4F7A35; --e5: #7B4F9E; --city: #2C3A45; --halo: rgba(245,241,231,.92);
-  --c1: #F7EBDD; --c2: #EDC9A6; --c3: #DC9B6C; --c4: #BC6840; --c5: #7E3A1C;
+  --c1: #EAF0F8; --c2: #BCCFE8; --c3: #84A7D6; --c4: #4A73B5; --c5: #1E3F80;
   --relief-op: 1;
   --display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --sans: 'Public Sans', 'Segoe UI', Roboto, Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --page: #10181E; --panel: #17222A; --ink: #E8E4DA; --muted: #9FAAB3; --line: #2C3943;
-  --sea: #0B1319; --land: #1B272F; --land-ext: #152028; --sl: #33271F; --border: #4A5862;
+  --sea: #0B1319; --land: #1B272F; --land-ext: #152028; --sl: #1B2A3F; --accent: #8DAEE8; --border: #4A5862;
   --road: #6B767E; --rn7: #D9D4C8; --rail: #D9D4C8; --rail-gap: #1B272F; --rail-minor: #56626B;
   --water: #1F4A60; --water-line: #4C8DB0; --water-ink: #8CC2DD; --relief-ink: #C9AE88;
   --e1: #E2B04A; --e2: #6FB2D2; --e3: #E8875A; --e4: #93C273; --e5: #C39BE3; --city: #D9D4C8; --halo: rgba(27,39,47,.92);
-  --c1: #3A2D25; --c2: #5E3B27; --c3: #8B4F2D; --c4: #BA6B3D; --c5: #EBA06D;
+  --c1: #1C2738; --c2: #233E68; --c3: #2F5C96; --c4: #4F84C6; --c5: #93B8EC;
   --relief-op: .55;
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --page: #10181E; --panel: #17222A; --ink: #E8E4DA; --muted: #9FAAB3; --line: #2C3943;
-  --sea: #0B1319; --land: #1B272F; --land-ext: #152028; --sl: #33271F; --border: #4A5862;
+  --sea: #0B1319; --land: #1B272F; --land-ext: #152028; --sl: #1B2A3F; --accent: #8DAEE8; --border: #4A5862;
   --road: #6B767E; --rn7: #D9D4C8; --rail: #D9D4C8; --rail-gap: #1B272F; --rail-minor: #56626B;
   --water: #1F4A60; --water-line: #4C8DB0; --water-ink: #8CC2DD; --relief-ink: #C9AE88;
   --e1: #E2B04A; --e2: #6FB2D2; --e3: #E8875A; --e4: #93C273; --e5: #C39BE3; --city: #D9D4C8; --halo: rgba(27,39,47,.92);
-  --c1: #3A2D25; --c2: #5E3B27; --c3: #8B4F2D; --c4: #BA6B3D; --c5: #EBA06D;
+  --c1: #1C2738; --c2: #233E68; --c3: #2F5C96; --c4: #4F84C6; --c5: #93B8EC;
   --relief-op: .55;
   color-scheme: dark }
 
@@ -40,7 +40,7 @@ body { background: var(--page); color: var(--ink); font-family: var(--sans); fon
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 32px }
 .wrap { max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px }
 header { display: flex; flex-direction: column; gap: 6px; max-width: 72ch; padding-bottom: 14px; border-bottom: 1px solid var(--line) }
-.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--e3) }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent) }
 h1 { font-family: var(--display); font-weight: 700; font-size: clamp(25px, 3.3vw, 36px); line-height: 1.18; margin: 0; text-wrap: balance }
 .lede { margin: 0; color: var(--muted); font-family: var(--display); font-style: italic; font-size: 15.5px }
 .grid { display: grid; grid-template-columns: minmax(0, 1fr) 370px; gap: 20px; align-items: start }
@@ -125,7 +125,7 @@ footer a { color: inherit }
 .ext { fill: var(--land-ext); stroke: var(--border); stroke-width: .8 }
 .prov { fill: var(--land); stroke: var(--border); stroke-width: .8; stroke-linejoin: round }
 .slp { fill: var(--sl) }
-.slb { fill: none; stroke: var(--e3); stroke-width: 2.2; stroke-linejoin: round }
+.slb { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linejoin: round }
 .relief { opacity: var(--relief-op); pointer-events: none }
 .res { fill: var(--water); stroke: var(--water-line); stroke-width: .6; pointer-events: none }
 .riv { fill: none; stroke: var(--water-line); stroke-width: 1; stroke-opacity: .85; stroke-linecap: round; stroke-linejoin: round; pointer-events: none }
@@ -134,7 +134,7 @@ footer a { color: inherit }
 .choro-on .depf { pointer-events: visiblePainted; cursor: pointer }
 .choro-on .depf:hover { stroke: var(--ink); stroke-width: 1.6 }
 .depf.sel { stroke: var(--ink); stroke-width: 2.2 }
-.dep { fill: none; stroke: var(--e3); stroke-opacity: .5; stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none }
+.dep { fill: none; stroke: var(--accent); stroke-opacity: .5; stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none }
 .hv { fill: none; stroke: var(--e1); stroke-opacity: .45; stroke-width: .9; pointer-events: none }
 .roads { fill: none; stroke: var(--road); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none }
 .rn7 { fill: none; stroke: var(--rn7); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; pointer-events: none }
@@ -149,7 +149,7 @@ footer a { color: inherit }
 .lbl { font-family: var(--sans); font-size: 12px; fill: var(--ink); paint-order: stroke; stroke: var(--halo); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none }
 .lbl.big { font-size: 13px; font-weight: 600 }
 .lbl.prov-l { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; fill: var(--muted); font-weight: 600 }
-.lbl.dep-l { font-size: 10.5px; fill: var(--e3); font-style: italic }
+.lbl.dep-l { font-size: 10.5px; fill: var(--accent); font-style: italic }
 .choro-on .lbl.dep-l { fill: var(--ink); font-style: normal; font-weight: 600 }
 .lbl.line-l { font-size: 11px; font-weight: 600; fill: var(--muted) }
 .lbl.flow-l { font-size: 11.5px; font-weight: 700 }
