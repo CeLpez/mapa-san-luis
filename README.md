@@ -6,11 +6,13 @@ Mapa interactivo del trabajo final sobre el potencial productivo de San Luis, Ar
 - **Data center:** La Punta, 20 MW de capacidad de TI.
 - **Granos:** terminal ferroviaria en la ZAL de Villa Mercedes y Zona Franca de Justo Daract.
 
-Además muestra las oportunidades de la Parte II (agroindustria, ganadería, biogás, rocas y lechería), el circuito turístico del noreste con datos de ocupación del INDEC, los nueve departamentos coloreables según el Censo 2022, y una capa de relieve, embalses, ríos y zonas de riego.
+Además muestra las oportunidades de la Parte II (agroindustria, ganadería, biogás y rocas), los destinos turísticos de toda la provincia con datos de ocupación del INDEC, los nueve departamentos coloreables según el Censo 2022, y una capa de relieve, embalses, ríos y zonas de riego.
 
 Se abre en cualquier navegador, en computadora o celular, sin instalar nada. Tocá cada punto o departamento para ver su ficha.
 
-**Ver el mapa:** abrí `index.html` o la página de GitHub Pages de este repositorio.
+**Ver el mapa:** https://celpez.github.io/mapa-san-luis/
+
+**Ver el sitio del trabajo** (datos del informe, gráficos y el mapa): https://celpez.github.io/mapa-san-luis/sitio/
 
 ## Fuentes de los datos geográficos
 
