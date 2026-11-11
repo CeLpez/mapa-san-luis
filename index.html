@@ -260,7 +260,6 @@ const PTS = [
   { id: 'cria', layer: 'op', kind: 'op', name: 'Cría bovina del sur', lon: -65.2536, lat: -34.7579, lab: [11, 4, 'start'], at: 0.9, mk: 0.6 },
   { id: 'biogas', layer: 'op', kind: 'op', name: 'Biogás ACA Yanquetruz', lon: -65.614, lat: -33.2812, lab: [11, 4, 'start'], at: 2.2, mk: 0.6 },
   { id: 'rocas', layer: 'op', kind: 'op', name: 'Rocas y minería · La Toma', lon: -65.6215, lat: -33.0535, lab: [11, 4, 'start'], at: 1.4, mk: 0.6 },
-  { id: 'lecheria', layer: 'op', kind: 'op', name: 'Lechería y riego del Conlara', lon: -65.2915, lat: -32.7312, lab: [-11, 4, 'end'], at: 1.4, mk: 0.6 },
   { id: 'condores', layer: 'op', kind: 'op', small: true, name: 'Mina Los Cóndores', lon: -65.2393, lat: -32.556, lab: [-10, 4, 'end'], at: 5, mk: 2 },
   { id: 'merlo', layer: 'tur', kind: 'tur', name: 'Villa de Merlo', lon: -65.0137, lat: -32.3426, lab: [11, -4, 'start'], at: 0.8, mk: 0.5 },
   { id: 'escondido', layer: 'tur', kind: 'tur', name: 'Pueblo Escondido', lon: -64.8723, lat: -32.4249, lab: [10, -2, 'start'], at: 8, mk: 2.4 },
@@ -270,6 +269,13 @@ const PTS = [
   { id: 'papagayos', layer: 'tur', kind: 'tur', name: 'Papagayos', lon: -64.9889, lat: -32.675, lab: [-10, 6, 'end'], at: 4, mk: 1.8 },
   { id: 'potrero', layer: 'tur', kind: 'tur', name: 'Potrero de los Funes', lon: -66.2229, lat: -33.2135, lab: [9, -6, 'start'], at: 3, mk: 1.6 },
   { id: 'quijadas', layer: 'tur', kind: 'tur', name: 'PN Sierra de las Quijadas', lon: -67.1442, lat: -32.5667, lab: [0, -12, 'middle'], at: 1.0, mk: 0.6 },
+  { id: 'trapiche', layer: 'tur', kind: 'tur', name: 'El Trapiche', lon: -66.0642, lat: -33.1085, lab: [10, 4, 'start'], at: 3.4, mk: 1.6 },
+  { id: 'carolina', layer: 'tur', kind: 'tur', name: 'La Carolina', lon: -66.0922, lat: -32.8111, lab: [-10, 4, 'end'], at: 2.2, mk: 0.9 },
+  { id: 'intihuasi', layer: 'tur', kind: 'tur', name: 'Gruta de Inti Huasi', lon: -65.9629, lat: -32.8349, lab: [10, 4, 'start'], at: 4, mk: 1.8 },
+  { id: 'quebrada', layer: 'tur', kind: 'tur', name: 'Villa de la Quebrada', lon: -66.2923, lat: -33.0132, lab: [-10, 4, 'end'], at: 2.6, mk: 1.2 },
+  { id: 'renca', layer: 'tur', kind: 'tur', name: 'Renca', lon: -65.364, lat: -32.7716, lab: [-10, 4, 'end'], at: 2.6, mk: 1.2 },
+  { id: 'balde', layer: 'tur', kind: 'tur', name: 'Termas de Balde', lon: -66.624, lat: -33.3403, lab: [-10, 4, 'end'], at: 2, mk: 0.9 },
+  { id: 'vmeventos', layer: 'tur', kind: 'tur', name: 'Calle Angosta y La Pedrera', lon: -65.4953, lat: -33.6852, lab: [-10, -8, 'end'], at: 2.6, mk: 1.2 },
   { id: 'sanluis', layer: 'city', city: true, name: 'San Luis', lon: -66.3369, lat: -33.3021, lab: [-9, 14, 'end'], at: 0, mk: 0, big: true },
   { id: 'mendoza', layer: 'city', city: true, name: 'Mendoza', lon: -68.8458, lat: -32.8895, lab: [-9, 4, 'end'], at: 0, mk: 0, big: true },
   { id: 'sanjuan', layer: 'city', city: true, name: 'San Juan', lon: -68.5364, lat: -31.5375, lab: [9, 4, 'start'], at: 0, mk: 0 },
@@ -295,7 +301,7 @@ const KIND = {
   e2: { label: 'Eje 2 · Datos', color: 'var(--e2)' },
   e3: { label: 'Eje 3 · Granos y logística', color: 'var(--e3)' },
   op: { label: 'Oportunidad de la Parte II', color: 'var(--e4)' },
-  tur: { label: 'Turismo del noreste', color: 'var(--e5)' },
+  tur: { label: 'Turismo', color: 'var(--e5)' },
   dep: { label: 'Departamento', color: 'var(--c4)' },
 };
 
@@ -329,12 +335,18 @@ const SRC = {
   aire: ['Aire de Santa Fe, norte de San Luis', 'https://www.airedesantafe.com.ar/turismo/cinco-paseos-imperdibles-el-norte-san-luis-n275179'],
   ellitoral: ['El Litoral, diques de San Luis', 'https://ellitoral.com/informacion-general/turismo-argentina-san-luis-merlo-villa-mercedes-trapiche-potrero-funes_0_nFseSyuOBT.amp.html'],
   apn: ['Parques Nacionales', 'https://www.argentina.gob.ar/parquesnacionales/sierradelasquijadas'],
+  lavoz: ['La Voz de San Justo, Potrero de los Funes', 'https://www.lavozdesanjusto.com.ar/potrero-de-los-funes-uno-de-los-destinos-mas-elegidos-de-san-luis-133506'],
+  mdz: ['MDZ, Sierras Centrales y La Carolina', 'https://www.mdzol.com/estilo/el-destino-cuyo-que-enamora-y-se-destaca-sus-precios-accesibles-n1435002'],
+  aci: ['ACI Prensa, Cristo de la Quebrada', 'https://www.aciprensa.com/noticias/99312/mas-de-134000-fieles-honraron-al-santo-cristo-de-la-quebrada-en-argentina'],
+  canal26t: ['Canal 26, termas de San Luis', 'https://www.canal26.com/turismo/2026/05/29/termas-de-san-luis-en-otono-donde-quedan-cuanto-cuestan-y-por-que-balde-y-san-geronimo-son-una-escapada-ideal/'],
+  uncuyo: ['UNCuyo, Calle Angosta', 'https://bibliotecas.uncu.edu.ar/explorador3/Record/I11-R84article-6500'],
+  stadium: ['StadiumDB, Estadio Único', 'https://stadiumdb.com/stadiums/arg/estadio_unico_de_villa_mercedes'],
 };
 
 const CARDS = {
   parque: { kind: 'e1', title: 'Parque renovable propuesto', status: 'Propuesta del trabajo · ubicación indicativa junto a San Luis Norte',
     body: 'Un parque híbrido que vende su energía a grandes usuarios con contratos de largo plazo (MATER). El recurso ya está probado por el parque vecino.',
-    facts: [['Potencia', '100 MW eólicos + 50 MW solares'], ['Inversión', 'USD 237 M'], ['Energía vendida', '458 GWh por año'], ['Precio', 'USD 65/MWh'], ['TIR real', '7,4% (9,2% a USD 75)'], ['Empleo en operación', '20 personas'], ['Al data center', '35% de la energía']],
+    facts: [['Potencia', '100 MW eólicos + 50 MW solares'], ['Inversión', 'USD 237 M'], ['Energía vendida', '458 GWh por año'], ['Precio', 'USD 65/MWh'], ['EBITDA', 'USD 25,0 M por año'], ['Empleo en operación', '20 personas'], ['Al data center', '35% de la energía']],
     note: 'Desde 2027 las centrales térmicas también podrán vender a grandes usuarios, lo que presiona el precio.', src: ['estaciones'] },
   sln: { kind: 'e1', title: 'Parque San Luis Norte', status: 'En operación · Toro Negro, departamento Belgrano',
     body: 'El primer parque híbrido eólico y solar del país, de PCR y ArcelorMittal Acindar. La parte solar inyecta al sistema nacional desde julio de 2025.',
@@ -344,17 +356,17 @@ const CARDS = {
     facts: [['La Cumbre III', '36 MW, 100 GWh por año'], ['Factor de capacidad', '31,7%']], src: ['constructor', 'gem'] },
   dc: { kind: 'e2', title: 'Data center de La Punta', status: 'Existe un data center provincial · sitio propuesto para el eje 2 (alternativa: Villa Mercedes)',
     body: 'Un data center mediano de colocation e inferencia, refrigerado por aire para no consumir agua, con energía del parque del eje 1.',
-    facts: [['Potencia de TI', '20 MW'], ['Inversión', 'USD 236 M, sin servidores'], ['Precio', 'USD 160/kW por mes'], ['TIR real', '6,8% (10,1% con precios de Santiago)'], ['Consumo', '160.800 MWh por año'], ['Empleo en operación', '40 personas']],
+    facts: [['Potencia de TI', '20 MW'], ['Inversión', 'USD 236 M, sin servidores'], ['Precio', 'USD 160/kW por mes'], ['EBITDA', 'USD 25,2 M por año'], ['Consumo', '160.800 MWh por año'], ['Empleo en operación', '40 personas']],
     note: 'Encuadra en el RIGI por el subsector IA (Decreto 105/2026). Falta validar la demanda.', src: ['dcmap', 'coloprice', 'chequeado'] },
   zal: { kind: 'e3', title: 'ZAL de Villa Mercedes y terminal de granos', status: 'La ZAL existe · la terminal es propuesta del trabajo · ubicación aproximada',
     body: 'La zona logística ya tiene desvío ferroviario, patio de contenedores y AgroZAL, que recibió 4.095 t de maíz en una semana de julio de 2026. La terminal cargaría el maíz en tren en lugar de camión.',
-    facts: [['Inversión', 'USD 9,5 M'], ['Volumen', '250.000 t por año'], ['TIR real', '8,4% (15% a USD 12/t)'], ['Camión a Rosario', 'USD 69,8/t'], ['Tren con terminal', 'USD 46,9/t'], ['Ahorro regional', 'USD 5,7 M por año'], ['Empleo en operación', '25 personas']],
+    facts: [['Inversión', 'USD 9,5 M'], ['Volumen', '250.000 t por año'], ['EBITDA', 'USD 1,41 M por año'], ['Camión a Rosario', 'USD 69,8/t'], ['Tren con terminal', 'USD 46,9/t'], ['Ahorro regional', 'USD 5,7 M por año'], ['Empleo en operación', '25 personas']],
     note: 'Villa Mercedes es el cruce de la RN 7, la RN 8 y el Ferrocarril San Martín.', src: ['ansl', 'vminfo', 'fetra', 'marval'] },
   zf: { kind: 'e3', title: 'Zona Franca de Justo Daract', status: 'Existente · departamento General Pedernera',
     body: 'Zona franca sobre la RN 7 y el Ferrocarril San Martín, a unos 35 km de Villa Mercedes. Complementa a la ZAL para cargas de exportación.', facts: [], src: ['semiarido'] },
   vmagro: { kind: 'op', title: 'Polo agroindustrial de Villa Mercedes', status: 'Existente · base para transformar el maíz en origen',
     body: 'El maíz vale USD 109/t en Villa Mercedes y USD 184/t en Rosario: la renta de ubicación de von Thünen favorece a quien lo transforma acá. Alrededor de la ciudad ya hay molienda, bioetanol, engorde a corral y frigoríficos exportadores.',
-    facts: [['Glucovil (Cargill)', 'unas 1.100 t de maíz por día'], ['Diaser, bioetanol', '250 m³/día de diseño; parada desde 2020'], ['Frigorífico exportador', 'Minerva Foods desde 2024'], ['Ser Beef, sobre la RN 7', '80.000 cabezas de capacidad'], ['Perfil feedlot + balanceado', 'USD 13,6 M · TIR 10,0%']],
+    facts: [['Glucovil (Cargill)', 'unas 1.100 t de maíz por día'], ['Diaser, bioetanol', '250 m³/día de diseño; parada desde 2020'], ['Frigorífico exportador', 'Minerva Foods desde 2024'], ['Ser Beef, sobre la RN 7', '80.000 cabezas de capacidad'], ['Perfil feedlot + balanceado', 'USD 13,6 M · 30 empleos']],
     note: 'Ubicación indicativa: las plantas están en Villa Mercedes y sus alrededores. Ser Beef está sobre la RN 7, entre San Luis y Villa Mercedes.', src: ['glucovil', 'diaser', 'minerva', 'serbeef'] },
   cria: { kind: 'op', title: 'Cría bovina del sur', status: 'Departamento Gobernador Dupuy · 36% del rodeo provincial',
     body: 'El sur es la zona de cría extensiva. La propuesta del trabajo es integrar esa cría con la recría y el engorde con maíz local en el este, en lugar de vender los terneros afuera.',
@@ -362,15 +374,11 @@ const CARDS = {
     note: 'El RIMI amortiza la genética animal en un año y sin monto mínimo.', src: [] },
   biogas: { kind: 'op', title: 'Biogás ACA Yanquetruz', status: 'En operación · Juan Llerena, departamento Coronel Pringles',
     body: 'Antecedente del biogás ganadero que propone el trabajo: convierte efluentes en energía para la red, una forma de internalizar una externalidad negativa (Stiglitz).',
-    facts: [['Potencia', '1,53 MW'], ['Ampliación RenovAr', '0,8 MW'], ['Ranking del trabajo', '7.º de 12 (56,3 puntos)']], src: ['aca', 'ipp'] },
+    facts: [['Potencia', '1,53 MW'], ['Ampliación RenovAr', '0,8 MW'], ['Ranking del trabajo', '6.º de 11 (56,3 puntos)']], src: ['aca', 'ipp'] },
   rocas: { kind: 'op', title: 'Rocas ornamentales y Plan Maestro de Minería', status: 'La Toma, departamento Coronel Pringles',
     body: 'Ónix y granito de La Toma. El Plan Maestro de Minería Sustentable 2026–2032 busca fortalecer a los productores y actualizar la información geológica; la Dirección de Minería tendrá sede acá desde 2027.',
-    facts: [['Operadores activos', 'menos de 30 (unos 200 hace dos décadas)'], ['Oportunidad del ranking', '6.º · clúster de rocas (60,0)'], ['Instrumentos', 'RIMI y RIPEE']],
+    facts: [['Operadores activos', 'menos de 30 (unos 200 hace dos décadas)'], ['Oportunidad del ranking', '5.º · clúster de rocas (60,0)'], ['Instrumentos', 'RIMI y RIPEE']],
     note: 'En el corto plazo el plan genera pocas inversiones: no aprueba minas nuevas. Su aporte es bajar el riesgo minero con información pública.', src: ['minplan', 'minsemi'] },
-  lecheria: { kind: 'op', title: 'Lechería con quesería y riego en el Conlara', status: 'Valle del Conlara · ubicación indicativa en Tilisarao',
-    body: 'La oportunidad mejor ubicada del ranking: tambos estabulados sobre riego con quesería propia. El riego también sirve para forraje y alfalfa de exportación.',
-    facts: [['Tambo con quesería', 'USD 11,1 M · TIR 13,9% (15,2% con RIMI)'], ['Sin quesería', 'TIR 8,1%'], ['Empleo directo', '45 personas'], ['Alfalfa bajo riego', 'TIR 28,1% (supuestos a validar)'], ['Riego de los consorcios', 'de 3.000 ha a menos de 500']],
-    note: 'Puramel, un tambo de la provincia, crece de 1.800 a 3.500 vacas con 6.000 ha bajo riego.', src: [] },
   condores: { kind: 'op', title: 'Mina Los Cóndores', status: 'Histórica · Concarán, departamento Chacabuco',
     body: 'Se explotó tungsteno hasta 1980. Hay litio en pegmatitas de Pringles, San Martín y Junín, todavía sin reservas modernas cuantificadas: el Plan Maestro prevé estudiarlas.', facts: [], src: ['minsemi'] },
   merlo: { kind: 'tur', title: 'Villa de Merlo', status: 'Principal destino turístico · departamento Junín',
@@ -388,17 +396,32 @@ const CARDS = {
   tigre: { kind: 'tur', title: 'Salto del Tigre', status: 'Sobre el límite con Córdoba',
     body: 'Cascada de unos 22 m que en invierno suele congelarse. Se combina con Pueblo Escondido en el mismo día, con unos 3,5 km de caminata.', facts: [], src: ['billiken', 'canal26'] },
   potrero: { kind: 'tur', title: 'Potrero de los Funes', status: 'Turismo de cercanía · a unos 19 km de la capital',
-    body: 'Dique de 1927, uno de los más antiguos de la región, rodeado de sierras. Es el destino de fin de semana de la ciudad de San Luis.', facts: [], src: ['ellitoral'] },
+    body: 'Dique de 1927, uno de los más antiguos de la región, rodeado de sierras, y un circuito de automovilismo de 6,25 km. Es el destino de fin de semana de la ciudad de San Luis.', facts: [], src: ['ellitoral', 'lavoz'] },
   quijadas: { kind: 'tur', title: 'Parque Nacional Sierra de las Quijadas', status: 'Departamento Belgrano · sobre la RN 147',
     body: 'Cañadones de areniscas rojizas con yacimientos paleontológicos. Es el principal atractivo de naturaleza del oeste provincial.', facts: [], src: ['apn'] },
+  trapiche: { kind: 'tur', title: 'El Trapiche', status: 'Sierras Centrales · a unos 40 km de la capital',
+    body: 'Base para los diques La Florida y Esteban Agüero, con miradores, senderos, pesca y áreas de picnic.', facts: [], src: ['mdz'] },
+  carolina: { kind: 'tur', title: 'La Carolina', status: 'Norte serrano · a unos 80 km de la capital',
+    body: 'Pueblo minero de oro que la Organización Mundial del Turismo eligió en 2023 entre los mejores pueblos turísticos del mundo, el único de Argentina en esa lista.', facts: [], src: ['mdz'] },
+  intihuasi: { kind: 'tur', title: 'Gruta de Inti Huasi', status: 'Norte serrano · cerca de La Carolina',
+    body: 'Gruta en un domo volcánico, con restos arqueológicos; se visita junto con La Carolina.', facts: [], src: ['mdz'] },
+  quebrada: { kind: 'tur', title: 'Villa de la Quebrada', status: 'Turismo religioso · a 38 km de la capital',
+    body: 'La fiesta del Cristo de la Quebrada, cada 3 de mayo, es la mayor peregrinación de la provincia. La mayoría de los peregrinos va y vuelve en el día.', facts: [['Peregrinos (2023)', 'más de 134.000']], src: ['aci'] },
+  renca: { kind: 'tur', title: 'Renca', status: 'Turismo religioso · Valle del Conlara',
+    body: 'Santuario del Señor de los Milagros de Renca, con su fiesta el 3 de mayo, al mismo tiempo que Villa de la Quebrada.', facts: [], src: ['aci'] },
+  balde: { kind: 'tur', title: 'Termas de Balde', status: 'Termalismo · a unos 30 km de la capital',
+    body: 'Complejo termal municipal, con baños individuales y pileta, y hoteles termales privados. Funciona todo el año.', facts: [], src: ['canal26t'] },
+  vmeventos: { kind: 'tur', title: 'Villa Mercedes: Calle Angosta y Parque La Pedrera', status: 'Turismo de eventos y cultura',
+    body: 'La Fiesta Nacional de la Calle Angosta, en enero, es la mayor fiesta folclórica de la ciudad. El Parque La Pedrera tiene un estadio para 28.000 espectadores y el autódromo José Carlos Bassi, que recibió al Turismo Carretera y al TCR World Tour en 2023.', facts: [['Estadio Único', '28.000 espectadores'], ['Autódromo', '4,4 km']],
+    note: 'Ubicación indicativa: la Calle Angosta y La Pedrera están en Villa Mercedes. La ciudad no tiene medición de ocupación hotelera del INDEC.', src: ['uncuyo', 'stadium'] },
   sanluis: { title: 'San Luis', status: 'Capital provincial',
-    body: 'A 260 km de Mendoza, 420 km de Córdoba y 790 km de Buenos Aires. En 2026 el tren San Martín hizo cargas puntuales de maíz, alfalfa y maní desde la provincia, sin frecuencia regular.', facts: [], src: ['arg', 'semiarido'] },
+    body: 'A 260 km de Mendoza, 420 km de Córdoba y 790 km de Buenos Aires. Su turismo es sobre todo de negocios, y es la base para visitar las Sierras Centrales, La Carolina y las termas.', facts: [['Ocupación de plazas (2025)', 'entre 20% y 32%'], ['Estadía media', '1,6 a 1,8 noches']], src: ['eoh', 'arg'] },
   rosario: { title: 'Puertos del Gran Rosario', status: 'Destino de la cadena de granos',
     body: 'Destino del maíz que hoy sale en camión. El flujo dibujado es esquemático: el perfil compara el camión desde Villa Mercedes con el tren más la terminal.',
     facts: [['Distancia por ruta', '520 km'], ['Ahorro por tonelada', 'USD 22,9']], src: ['fetra'] },
   baires: { title: 'Buenos Aires', status: 'Cabecera del Ferrocarril San Martín', body: 'La línea troncal del San Martín une Mendoza, San Luis, Villa Mercedes y Junín con Buenos Aires.', facts: [], src: [] },
   mendoza: { title: 'Mendoza', status: 'Corredor bioceánico', body: 'Por la RN 7 y el Paso Cristo Redentor, San Luis queda en el camino entre los puertos chilenos del Pacífico y los del Paraná.', facts: [], src: [] },
-  santiago: { title: 'Santiago de Chile', status: 'Mercado de referencia del eje 2', body: 'Con los precios de colocation de Santiago, el data center del eje 2 rendiría 10,1% en lugar de 6,8%.', facts: [], src: ['coloprice'] },
+  santiago: { title: 'Santiago de Chile', status: 'Mercado de referencia del eje 2', body: 'Santiago es uno de los mercados de colocation más caros de la región; el eje 2 se dimensiona con los precios de São Paulo, los más bajos.', facts: [], src: ['coloprice'] },
   valpo: { title: 'Valparaíso y San Antonio', status: 'Puertos del Pacífico', body: 'Salida al Pacífico del corredor bioceánico. La ZAL ya recibe contenedores por tren.', facts: [], src: ['vminfo'] },
 };
 
@@ -723,36 +746,44 @@ function backBtn() {
 function overview() {
   clearSel();
   const ax = [
-    ['e1', 'parque', 'Parque renovable de 150 MW en el norte', 'USD 237 M · TIR 7,4% · 458 GWh por año'],
-    ['e2', 'dc', 'Data center de 20 MW de TI en La Punta', 'USD 236 M · TIR 6,8% · compra el 35% de la energía'],
-    ['e3', 'zal', 'Terminal de granos en la ZAL de Villa Mercedes', 'USD 9,5 M · TIR 8,4% · USD 5,7 M por año de ahorro'],
+    ['e1', 'parque', 'Parque renovable de 150 MW en el norte', 'USD 237 M · 458 GWh por año · 20 empleos'],
+    ['e2', 'dc', 'Data center de 20 MW de TI en La Punta', 'USD 236 M · 40 empleos · compra el 35% de la energía'],
+    ['e3', 'zal', 'Terminal de granos en la ZAL de Villa Mercedes', 'USD 9,5 M · 25 empleos · USD 5,7 M por año de ahorro'],
   ];
   card.innerHTML = `<h2>Los tres ejes</h2>` + ax.map(([k, id, t, num]) => `
     <div class="axis"><span class="bar" style="background:${KIND[k].color}"></span>
       <b>${esc(KIND[k].label)}: ${esc(t)}</b><span class="num">${esc(num)}</span>
       <button type="button" data-go="${id}">Ver en el mapa</button></div>`).join('') +
-    `<p class="note">Ninguno supera solo el 12% de costo de capital; juntos se refuerzan: el parque abastece al data center y la terminal saca el maíz por tren.</p>
+    `<p class="note">Son infraestructura y se refuerzan: el parque abastece al data center y la terminal saca el maíz por tren.</p>
      <div class="more">
        <button type="button" data-more="op"><span class="sw dia" style="background:var(--e4)"></span>Oportunidades</button>
-       <button type="button" data-more="tur"><span class="sw dot" style="background:var(--e5)"></span>Circuito turístico</button>
+       <button type="button" data-more="tur"><span class="sw dot" style="background:var(--e5)"></span>Turismo</button>
        <button type="button" data-more="dep"><span class="sw" style="background:var(--c4)"></span>Departamentos</button>
      </div>`;
   card.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => { setView('ejes'); select(b.dataset.go); }));
   card.querySelectorAll('[data-more]').forEach(b => b.addEventListener('click', () => {
     const k = b.dataset.more;
     if (k === 'op') { setLayer('op', true); setView('provincia'); listCard('op'); }
-    if (k === 'tur') { setLayer('tur', true); setView('noreste'); select('merlo'); }
+    if (k === 'tur') { setLayer('tur', true); setView('provincia'); listCard('tur'); }
     if (k === 'dep') { setMetric('pob'); setView('provincia'); listCard('dep'); }
   }));
 }
 function listCard(kind) {
   clearSel();
   if (kind === 'op') {
-    const ids = ['lecheria', 'vmagro', 'cria', 'biogas', 'rocas', 'condores'];
+    const ids = ['vmagro', 'cria', 'biogas', 'rocas', 'condores'];
     card.innerHTML = `<span class="tag" style="background:var(--e4)">${esc(KIND.op.label)}</span><h3>Valor agregado en origen</h3>
-      <p>Las oportunidades de la Parte II que complementan a los ejes: transformar el maíz y la leche en la provincia, integrar la cadena ganadera y procesar las rocas.</p>` +
+      <p>Las oportunidades de la Parte II que complementan a los ejes: transformar el maíz en la provincia, integrar la cadena ganadera y procesar las rocas.</p>` +
       ids.map(id => `<div class="axis"><span class="bar" style="background:var(--e4)"></span><b>${esc(CARDS[id].title)}</b><span class="num">${esc(CARDS[id].status)}</span><button type="button" data-go="${id}">Ver</button></div>`).join('');
     card.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => select(b.dataset.go)));
+  } else if (kind === 'tur') {
+    const ids = ['merlo', 'potrero', 'trapiche', 'carolina', 'balde', 'quebrada', 'renca', 'vmeventos', 'quijadas'];
+    card.innerHTML = `<span class="tag" style="background:var(--e5)">${esc(KIND.tur.label)}</span><h3>San Luis es más que Merlo</h3>
+      <p>Merlo concentra las plazas, pero la provincia tiene otros productos: escapadas a las Sierras Centrales, La Carolina, termas, peregrinaciones y eventos en Villa Mercedes. La capital recibe sobre todo turismo de negocios, con estadías de 1,7 noches.</p>` +
+      ids.map(id => `<div class="axis"><span class="bar" style="background:var(--e5)"></span><b>${esc(CARDS[id].title)}</b><span class="num">${esc(CARDS[id].status)}</span><button type="button" data-go="${id}">Ver</button></div>`).join('') +
+      `<button type="button" class="back" id="ne">Ver el circuito del noreste</button>`;
+    card.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => select(b.dataset.go)));
+    document.getElementById('ne').addEventListener('click', () => { setView('noreste'); select('merlo'); });
   } else {
     card.innerHTML = `<span class="tag" style="background:var(--c4)">Censo 2022</span><h3>Nueve departamentos, dos provincias</h3>
       <p>Pueyrredón y Pedernera reúnen el 76% de la población y casi nueve de cada diez personas tienen cloaca. En Dupuy, Belgrano y San Martín casi nadie tiene gas de red: el desarrollo desigual también es interno.</p>
