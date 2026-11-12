@@ -14,6 +14,10 @@ Se abre en cualquier navegador, en computadora o celular, sin instalar nada. Toc
 
 **Ver el sitio del trabajo** (datos del informe, gráficos y el mapa): https://celpez.github.io/mapa-san-luis/sitio/
 
+**Descargar el informe completo (PDF):** https://celpez.github.io/mapa-san-luis/informe-san-luis.pdf
+
+Las tipografías (Inter, Sora, Libre Baskerville y Public Sans, licencia OFL) están alojadas en `fonts/`, así que el sitio no depende de servicios externos.
+
 ## Fuentes de los datos geográficos
 
 - Instituto Geográfico Nacional (IGN): límites provinciales, rutas nacionales, ferrocarriles y líneas de alta tensión.
