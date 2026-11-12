@@ -841,7 +841,7 @@ function selectDept(n) {
 
 // On narrow screens the card sits below the map, so bring it into view after a selection.
 const narrow = window.matchMedia('(max-width: 920px)');
-function revealCard() { if (narrow.matches) card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function revealCard() { if (narrow.matches) window.scrollTo({ top: card.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' }); }
 if (narrow.matches) document.getElementById('capas').open = false;
 
 // Search over selectable projects, destinations and departments.
