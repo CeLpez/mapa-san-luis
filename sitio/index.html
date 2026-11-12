@@ -391,6 +391,16 @@ a { color: inherit; }
 .rg-bars b { text-align: right; font-variant-numeric: tabular-nums; }
 @media (max-width: 980px) { .regs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .regs { grid-template-columns: 1fr; } }
+
+/* circuitos */
+.circ { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+.circ article { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: 18px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.circ h4 { font-size: 17px; }
+.circ p { font-size: 14px; color: var(--muted); }
+.circ p b { color: var(--ink); }
+.circ .cd { color: var(--accent); font-weight: 600; }
+@media (max-width: 980px) { .circ { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .circ { grid-template-columns: 1fr; } }
 </style>
 
 <header class="top">
@@ -665,14 +675,16 @@ a { color: inherit; }
         <p class="note">Stock bovino a abril de 2024: 1,39 millones de cabezas (+8,4%, mientras Cuyo caía 7,2%). La propuesta: cría en el sur, engorde con maíz local en el este, forraje bajo riego en el norte y biogás con los efluentes. Fuente: SENASA, vía El Semiárido.</p>
       </div>
       <div class="panel">
-        <span class="kicker">Turismo · Merlo, 2025</span>
+        <span class="kicker">Circuito del noreste · Merlo, 2025</span>
         <h3 class="ch-t">Tres de cada cuatro plazas quedan vacías</h3>
         <div class="vchart" style="--ref:54.89"><div class="vc-plot"><div class="vc-refline"><span>Promedio 2025: 24,7%</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">39,8%</span><span class="vc-b" style="height:88.4%"></span></div><span class="vc-l">Ene</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">32,9%</span><span class="vc-b" style="height:73.1%"></span></div><span class="vc-l">Feb</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">21,8%</span><span class="vc-b" style="height:48.4%"></span></div><span class="vc-l">Abr</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">16,2%</span><span class="vc-b" style="height:36.0%"></span></div><span class="vc-l">May</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">16,2%</span><span class="vc-b" style="height:36.0%"></span></div><span class="vc-l">Jun</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">28,0%</span><span class="vc-b" style="height:62.2%"></span></div><span class="vc-l">Jul</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">16,4%</span><span class="vc-b" style="height:36.4%"></span></div><span class="vc-l">Ago</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">21,4%</span><span class="vc-b" style="height:47.6%"></span></div><span class="vc-l">Sep</span></div><div class="vc"><div class="vc-bw"><span class="vc-v">24,8%</span><span class="vc-b" style="height:55.1%"></span></div><span class="vc-l">Nov</span></div></div></div>
         <p class="note">Ocupación de plazas por mes; faltan marzo, octubre y diciembre. Con capacidad ociosa, el costo de alojar a un turista más es bajo: base para paquetes de naturaleza en temporada baja. Fuente: INDEC, Encuesta de Ocupación Hotelera.</p>
       </div>
     </div>
-    <h3 class="h3">San Luis es más que Merlo</h3>
-    <div class="dest"><article><h4>Capital y Sierras Centrales</h4><p>Potrero de los Funes, El Volcán, Estancia Grande, El Trapiche</p><span>Escapadas, eventos y negocios</span></article><article><h4>Costa de los Comechingones</h4><p>Merlo, Papagayos, Villa Larca, Cortaderas</p><span>Naturaleza y descanso: el principal destino</span></article><article><h4>Norte serrano</h4><p>La Carolina e Inti Huasi</p><span>Cultural y de naturaleza</span></article><article><h4>Termas y salinas</h4><p>Balde, San Jerónimo, Salinas del Bebedero</p><span>Termalismo todo el año</span></article><article><h4>Turismo religioso</h4><p>Villa de la Quebrada y Renca</p><span>Más de 134.000 peregrinos (2023)</span></article><article><h4>Villa Mercedes y El Morro</h4><p>Calle Angosta, Parque La Pedrera, El Morro</p><span>Eventos y cultura</span></article><article><h4>Oeste</h4><p>Parque Nacional Sierra de las Quijadas</p><span>Naturaleza y paleontología</span></article><article class="dest-key"><h4>Dónde puede crecer</h4><p>Convertir visitas de un día en estadías, un circuito desde la capital y un calendario de eventos en temporada baja.</p><span>Localizaciones concatenadas (Benítez)</span></article></div>
+    <h3 class="h3">Seis circuitos en toda la provincia</h3>
+    <p class="sub tight">Merlo es el único destino con datos mensuales del INDEC, junto con la capital, y por eso la primera versión de la propuesta se concentró ahí. Pero proponer solo para Merlo refuerza el destino que ya concentra la oferta: el desarrollo desigual de Neil Smith. La propuesta pasa a ser una red de circuitos, con Merlo como uno más.</p>
+    <div class="circ"><article><h4>Sierras Centrales y norte serrano</h4><p class="cd">Potrero de los Funes, El Trapiche, La Carolina e Inti Huasi</p><p><b>Público.</b> viajeros de negocios de la capital, que hoy se quedan 1,7 noches, y escapadas de fin de semana</p><p><b>Falta.</b> paquetes de una o dos noches desde la capital y transporte a La Carolina</p></article><article><h4>Turismo religioso</h4><p class="cd">Villa de la Quebrada y Renca</p><p><b>Público.</b> los más de 134.000 peregrinos del 3 de mayo, que hoy van y vuelven en el día</p><p><b>Falta.</b> alojamiento y gastronomía para convertir la visita de un día en una noche</p></article><article><h4>Eventos en Villa Mercedes</h4><p class="cd">Calle Angosta, Parque La Pedrera y El Morro</p><p><b>Público.</b> la Fiesta de la Calle Angosta (enero), carreras y recitales</p><p><b>Falta.</b> un calendario de eventos en los meses en que Merlo está vacío</p></article><article><h4>Termas</h4><p class="cd">Balde y San Jerónimo, a unos 30 km de la capital</p><p><b>Público.</b> todo el año; suma noches al circuito de la capital</p><p><b>Falta.</b> promoción conjunta con los hoteles de la capital</p></article><article><h4>Oeste y sur</h4><p class="cd">Sierra de las Quijadas y las lagunas del sur</p><p><b>Público.</b> naturaleza, paleontología y pesca</p><p><b>Falta.</b> relevar accesos, prestadores y alojamiento</p></article><article><h4>Noreste</h4><p class="cd">Merlo, Papagayos, Villa Larca y Cortaderas</p><p><b>Público.</b> residentes de Córdoba, Mendoza, San Juan, Rosario y el AMBA, en temporada baja</p><p><b>Falta.</b> paquetes con la capacidad ociosa: 24,7% de ocupación en 2025</p></article></div>
+    <p class="note">Un consorcio de agencias de la capital, Villa Mercedes y Merlo arma y vende los circuitos con precio cerrado; el RIPEE incluye al turismo. Fuera de Merlo y la ciudad de San Luis no hay estadística oficial de turismo: medir ocupación y gasto en cada circuito es parte de la propuesta.</p>
   </div>
 </section>
 
