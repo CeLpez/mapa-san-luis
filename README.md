@@ -1,12 +1,8 @@
-# Mapa de los ejes de San Luis
+# Mapa de San Luis
 
-Mapa interactivo del trabajo final sobre el potencial productivo de San Luis, Argentina (octubre de 2026). Muestra los tres ejes de inversión del proyecto:
+Mapa interactivo del trabajo final sobre el potencial productivo de San Luis, Argentina (noviembre de 2026). Muestra los nueve departamentos según el Censo 2022, la infraestructura que ya existe, las oportunidades de desarrollo y los destinos turísticos.
 
-- **Energía renovable:** parque San Luis Norte y zona del parque propuesto de 150 MW.
-- **Data center:** La Punta, 20 MW de capacidad de TI.
-- **Granos:** terminal ferroviaria en la ZAL de Villa Mercedes y Zona Franca de Justo Daract.
-
-Además muestra las oportunidades de la Parte II (agroindustria, ganadería, biogás y rocas), los destinos turísticos de toda la provincia con datos de ocupación del INDEC, los nueve departamentos coloreables según el Censo 2022, y una capa de relieve, embalses, ríos y zonas de riego.
+Tiene además capas de relieve, embalses, ríos y zonas de riego.
 
 Se abre en cualquier navegador, en computadora o celular, sin instalar nada. Tocá cada punto o departamento para ver su ficha.
 
@@ -26,4 +22,4 @@ Las tipografías (Inter, Sora, Libre Baskerville y Public Sans, licencia OFL) es
 - Terrain Tiles (AWS Open Data; SRTM y otras fuentes): relieve sombreado.
 - DEyC San Luis e INDEC: Censo 2022 por departamento y Encuesta de Ocupación Hotelera 2025.
 
-El flujo de granos hacia Rosario es esquemático. Las cifras de cada eje vienen de los perfiles de proyecto del trabajo.
+Las cifras de las oportunidades vienen de los perfiles de proyecto del trabajo.

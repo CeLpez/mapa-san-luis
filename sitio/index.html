@@ -331,8 +331,9 @@ a { color: inherit; }
 @media (max-width: 900px) { .choro { grid-template-columns: 1fr; } }
 
 /* map */
-.mapframe { margin-top: 28px; border-radius: 26px; overflow: hidden; background: var(--navy); padding: 10px; box-shadow: var(--shadow); }
-.mapframe iframe { display: block; width: 100%; height: min(78vh, 720px); min-height: 480px; border: 0; border-radius: 18px; background: var(--surface); }
+.mapframe { margin-top: 28px; }
+.mapframe iframe { display: block; width: 100%; height: min(82vh, 760px); min-height: 560px; border: 0; background: transparent; }
+@media (max-width: 920px) { .mapframe iframe { height: 1480px; min-height: 0; } }
 .map-link { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .map-link a { color: var(--accent); font-weight: 600; }
 
@@ -710,29 +711,6 @@ a { color: inherit; }
       <p class="note">Once oportunidades puntuadas de 0 a 100 con diez criterios ponderados: impacto (42,5%) y factibilidad (57,5%). La cadena maíz → proteína queda primera con los pesos del equipo, de Gobierno y de Inversor.</p>
     </div>
 
-    <h2 class="h2">Los tres ejes: energía, datos y granos</h2>
-    <p class="sub tight">Proyectos de escala que se encadenan: el parque renovable necesita un comprador estable, el data center energía limpia, y la terminal de granos convierte la distancia al puerto en ventaja para quien transforma el maíz.</p>
-    <div class="ejes"><article class="eje"><span class="pill">RIGI</span><h3>Energía renovable</h3><dl class="eje-n"><div><dt>Escala</dt><dd>150 MW eólico-solar</dd></div><div><dt>Inversión</dt><dd>USD 237 M</dd></div><div><dt>EBITDA</dt><dd>USD 25,0 M por año</dd></div><div><dt>Empleo</dt><dd>20 directos</dd></div></dl><p><b>Aprovecha.</b> Precedente de San Luis Norte (130,5 MW) y proyectos solares nuevos.</p><p><b>Falta.</b> Capacidad de transmisión; competencia de las térmicas desde 2027.</p></article><article class="eje"><span class="pill">RIGI (a confirmar)</span><h3>Data center</h3><dl class="eje-n"><div><dt>Escala</dt><dd>20 MW de TI</dd></div><div><dt>Inversión</dt><dd>USD 236 M</dd></div><div><dt>EBITDA</dt><dd>USD 25,2 M por año</dd></div><div><dt>Empleo</dt><dd>40 directos</dd></div></dl><p><b>Aprovecha.</b> Ubicación central, fibra de la Autopista de la Información y clima seco para enfriar por aire.</p><p><b>Falta.</b> Un cliente ancla; el Súper RIGI no está sancionado.</p></article><article class="eje"><span class="pill">RIMI + RIPEE</span><h3>Granos y ZAL</h3><dl class="eje-n"><div><dt>Escala</dt><dd>250.000 t por año</dd></div><div><dt>Inversión</dt><dd>USD 9,5 M</dd></div><div><dt>EBITDA</dt><dd>USD 1,4 M por año</dd></div><div><dt>Ahorro de flete</dt><dd>USD 5,7 M por año</dd></div></dl><p><b>Aprovecha.</b> Patio de contenedores (feb-2026), AgroZAL recibiendo maíz y la línea San Martín.</p><p><b>Falta.</b> Servicio ferroviario regular: la concesión abre ofertas el 11/11/2026.</p></article></div>
-    <p class="note">Perfiles propios en dólares constantes, sin financiamiento y con precios de octubre de 2026 (planilla perfiles_ejes_san_luis.xlsx).</p>
-    <div class="two">
-      <div class="panel">
-        <span class="kicker">Eje 3 · Granos y logística</span>
-        <h3 class="ch-t">Por tren desde la ZAL, el productor ahorra USD 22,9 por tonelada</h3>
-        <div class="flete"><div class="fl-row"><span class="fl-l">Camión, 520 km</span><span class="fl-t"><span class="fl-s fl0" style="width:93.07%" title="Flete: USD 69,8"></span><b>USD 69,8</b></span></div><div class="fl-row"><span class="fl-l">Tren desde la ZAL</span><span class="fl-t"><span class="fl-s fl0 is-train" style="width:46.53%" title="Flete: USD 34,9"></span><span class="fl-s fl1 is-train" style="width:12.00%" title="Terminal: USD 9,0"></span><span class="fl-s fl2 is-train" style="width:4.00%" title="Descarga en puerto: USD 3,0"></span><b>USD 46,9</b></span></div><p class="fl-leg"><span><i class="fl0 is-train"></i>Flete en tren USD 34,9</span><span><i class="fl1 is-train"></i>Terminal USD 9</span><span><i class="fl2 is-train"></i>Descarga en puerto USD 3</span></p></div>
-        <p class="note">Costo de llevar una tonelada de maíz de Villa Mercedes a Rosario. Con 250.000 t por año, el ahorro para los productores es de USD 5,7 M. Fuentes: Fetra, vía Bichos de Campo; BCR; modelo propio.</p>
-      </div>
-      <div class="panel">
-        <span class="kicker">Cómo se encadenan</span>
-        <h3 class="ch-t">Cada eje habilita a otro</h3>
-        <ol class="steps">
-          <li><b>El parque vende al data center.</b> El data center compra el 35% de la energía con un contrato MATER: es el comprador estable que hace financiable el parque.</li>
-          <li><b>El data center usa energía limpia.</b> Con el clima seco se refrigera por aire, sin agua.</li>
-          <li><b>La terminal saca el maíz por tren.</b> Baja el costo de llegar al puerto para toda la región.</li>
-          <li><b>El feedlot usa el mismo maíz.</b> Lo transforma en carne en la provincia y no paga flete a puerto.</li>
-        </ol>
-      </div>
-    </div>
-
     <h2 class="h2">Ganadería: retener el ternero y transformarlo en la provincia</h2>
     <p class="sub tight">El flete que encarece el maíz para exportarlo lo abarata para quien lo convierte en carne dentro de la provincia.</p>
     <ul class="stats3">
@@ -773,9 +751,9 @@ a { color: inherit; }
 <section class="sec alt" id="mapa">
   <div class="wrap">
     <p class="eyebrow"><span></span>Mapa interactivo</p>
-    <p class="sub">Relieve, agua y riego, departamentos por indicador del censo, los tres ejes y los destinos turísticos.</p>
+    <p class="sub">Los nueve departamentos coloreados según el Censo 2022, con la infraestructura que ya existe, las oportunidades de desarrollo y los destinos turísticos. Tocá un departamento o un punto para ver su ficha.</p>
     <div class="mapframe">
-      <iframe src="../" title="Mapa interactivo de San Luis" loading="lazy"></iframe>
+      <iframe src="../#embed" title="Mapa interactivo de San Luis" loading="lazy"></iframe>
     </div>
     <p class="map-link">Si el mapa no carga, abrilo en una pestaña: <a href="https://celpez.github.io/mapa-san-luis/" target="_blank" rel="noopener">celpez.github.io/mapa-san-luis</a></p>
   </div>
